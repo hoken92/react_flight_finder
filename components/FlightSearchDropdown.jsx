@@ -1,8 +1,8 @@
-function FlightSearchDropdown({ title, cities, name }) {
+function FlightSearchDropdown({ title, cities, name, handleChange }) {
   return (
     <div>
       <h1>{title}</h1>
-      <select name={name}>
+      <select name={name} onChange={handleChange} required>
         {cities.map((city, i) => {
           return (
             <option key={i} value={city.value}>

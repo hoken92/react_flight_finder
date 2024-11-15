@@ -1,11 +1,20 @@
-import "./App.css";
-import Form from "../components/Form";
-import { cities } from "../data/Cities.jsx";
+import { Routes, Route } from "react-router-dom";
+import SearchPage from "../pages/SearchPage";
+import NotFound from "../pages/NotFound";
+import MyTrips from "../pages/MyTrips";
+import NavBar from "../components/Navbar";
 
 function App() {
   return (
     <>
-      <Form cities={cities} />
+      <NavBar />
+
+      <Routes>
+        <Route path="/" element={<SearchPage />} />
+        <Route path="/trips" element={<MyTrips />} />
+
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
