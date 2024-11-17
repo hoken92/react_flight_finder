@@ -1,12 +1,15 @@
-import { useState } from "react";
 import Form from "../components/Form";
 import { cities } from "../data/Cities.jsx";
 
-function SearchPage() {
-  const [formData, setFormData] = useState({});
+function SearchPage({ formData, setFormData, setFlightData }) {
   return (
     <>
-      <Form cities={cities} formData={formData} setFormData={setFormData} />
+      <Form
+        cities={cities}
+        formData={formData}
+        setFormData={setFormData}
+        setFlightData={setFlightData}
+      />
     </>
   );
 }

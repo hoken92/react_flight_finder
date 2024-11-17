@@ -1,15 +1,26 @@
 import FlightSearchDropdown from "./FlightSearchDropdown";
 import DatePicker from "./DatePicker";
 import SearchButton from "./SearchButton";
+import { useNavigate } from "react-router-dom";
 
-function Form({ cities, formData, setFormData }) {
+function Form({ cities, formData, setFormData, setFlightData }) {
+  const navigate = useNavigate();
   function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   }
 
   function handleSubmit(e) {
-    e.preventDefault();
-    console.log(formData);
+    try {
+      e.preventDefault();
+      console.log(formData);
+      // setFlightData();
+      navigate("/flights");
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (

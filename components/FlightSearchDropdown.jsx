@@ -3,6 +3,7 @@ function FlightSearchDropdown({ title, cities, name, handleChange }) {
     <div>
       <h1>{title}</h1>
       <select name={name} onChange={handleChange} required>
+        <option value="">Select One</option>
         {cities.map((city, i) => {
           return (
             <option key={i} value={city.value}>
