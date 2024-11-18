@@ -34,6 +34,7 @@ This React application allows users to find flights to selected locations based 
 
 - [React](https://react.dev/)
 - [Amadeus](https://developers.amadeus.com/get-started/get-started-with-self-service-apis-335) This is the 3rd party API to retrive travel infomation.
+- [Netlify App](https://aquamarine-unicorn-d26d0d.netlify.app/) - Does not work due to BEARER token expiring
 
 ### Authors
 
