@@ -2,9 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import SearchPage from "../pages/SearchPage";
 import NotFound from "../pages/NotFound";
 import NavBar from "../components/Navbar";
-import FlightList from "../components/FlightList";
+import Flights from "../pages/Flights";
 import MyTrips from "../pages/MyTrips";
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -12,10 +13,11 @@ function App() {
     departureDate: "",
     destinationLocationCode: "",
     returnDate: "",
+    adults: "1",
   });
 
   const [flightData, setFlightData] = useState({});
-  const [tripData, setTripData] = useState(null);
+  const [tripData, setTripData] = useState({});
 
   return (
     <>
@@ -35,7 +37,12 @@ function App() {
         <Route
           path="/flights"
           element={
-            <FlightList formData={formData} setFlightData={setFlightData} />
+            <Flights
+              formData={formData}
+              flightData={flightData}
+              tripData={tripData}
+              setTripData={setTripData}
+            />
           }
         />
 

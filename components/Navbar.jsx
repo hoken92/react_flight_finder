@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav>
-      <Link to="/">Search Flights</Link>
-      {/* <Link to="/trips">Trips</Link> */}
+    <nav id="navbar">
+      <Link to="/" className="nav-item">
+        Search Flights
+      </Link>
+      {/* <Link to="/mytrips">Trips</Link> */}
     </nav>
   );
 }

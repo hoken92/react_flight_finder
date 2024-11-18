@@ -1,12 +1,32 @@
-import { flight1 } from "../data/TestFlightdata.jsx";
-import SelectButton from "./SelectButton.jsx";
+// import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
 
-export default function FlightItem({ formData, setFlightData }) {
+export default function FlightItem({
+  formData,
+  flightData,
+  tripData,
+  setTripData,
+}) {
+  // const [id, setId] = useState(0);
+  // const navigate = useNavigate();
+
+  // function handleSelect() {
+  //   console.log(id);
+  //   console.log("handling event");
+  //   flight1.data.map((flight) => {
+  //     if (flight.id === id) {
+  //       console.log(flight);
+  //       return setTripData({ ...tripData, flight });
+  //     }
+  //   });
+  // navigate("/mytrips");
+  // }
+
   return (
     <div>
-      {flight1.data.map((flight) => {
+      {flightData.data.map((flight) => {
         return (
-          <div key={flight.id}>
+          <div key={flight.id} id={flight.id}>
             <h2>Origin Flight: {formData.originLocationCode}</h2>
             <p>
               {new Date(
@@ -15,10 +35,12 @@ export default function FlightItem({ formData, setFlightData }) {
             </p>
             <p>{flight.itineraries[0].duration}</p>
             <h2>Return Flight: {formData.destinationLocationCode}</h2>
-            <p>{flight.itineraries[1].segments[0].departure.at}</p>
-            <p>{flight.itineraries[1].duration}</p>
-            <p>${flight.price.total}</p>
-            <SelectButton />
+            <p>
+              Departure time: {flight.itineraries[1].segments[0].departure.at}
+            </p>
+            <p>Duration: {flight.itineraries[1].duration}</p>
+            <p>Price: ${flight.price.total}</p>
+            <button>Select</button>
           </div>
         );
       })}

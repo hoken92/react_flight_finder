@@ -1,4 +1,4 @@
-export default function SelectButton() {
+export default function SelectButton({ handleSelect }) {
   return (
     <>
       <button>Select</button>
