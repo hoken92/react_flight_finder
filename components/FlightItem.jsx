@@ -23,23 +23,31 @@ export default function FlightItem({
   // }
 
   return (
-    <div>
+    <div id="flight-container">
       {flightData.data.map((flight) => {
         return (
-          <div key={flight.id} id={flight.id}>
+          <div className="flight-item-container" key={flight.id} id={flight.id}>
             <h2>Origin Flight: {formData.originLocationCode}</h2>
-            <p>
+            <p className="flight-text">
+              Departure time:{" "}
               {new Date(
                 flight.itineraries[0].segments[0].departure.at
               ).toUTCString()}
             </p>
-            <p>{flight.itineraries[0].duration}</p>
-            <h2>Return Flight: {formData.destinationLocationCode}</h2>
-            <p>
-              Departure time: {flight.itineraries[1].segments[0].departure.at}
+            <p className="flight-text">
+              Duration: {flight.itineraries[0].duration}
             </p>
-            <p>Duration: {flight.itineraries[1].duration}</p>
-            <p>Price: ${flight.price.total}</p>
+            <h2>Return Flight: {formData.destinationLocationCode}</h2>
+            <p className="flight-text">
+              Departure time:{" "}
+              {new Date(
+                flight.itineraries[1].segments[0].departure.at
+              ).toUTCString()}
+            </p>
+            <p className="flight-text">
+              Duration: {flight.itineraries[1].duration}
+            </p>
+            <p className="price-info">Price: ${flight.price.total}</p>
             <button>Select</button>
           </div>
         );

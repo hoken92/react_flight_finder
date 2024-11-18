@@ -35,33 +35,37 @@ function Form({ cities, formData, setFormData, setFlightData }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} id="form">
-      <h2>Form</h2>
-      <FlightSearchDropdown
-        title="Origin"
-        cities={cities}
-        name="originLocationCode"
-        handleChange={handleChange}
-      />
-      <DatePicker
-        title="Departure Date"
-        name="departureDate"
-        handleChange={handleChange}
-      />
-      <FlightSearchDropdown
-        title="Destination"
-        cities={cities}
-        name="destinationLocationCode"
-        handleChange={handleChange}
-      />
-      <DatePicker
-        title="Return Date"
-        name="returnDate"
-        handleChange={handleChange}
-      />
-      <Input title="Adults:" name="adults" handleChange={handleChange} />
-      <SearchButton />
-    </form>
+    <>
+      <h2>Search Flights</h2>
+      <br />
+      <form onSubmit={handleSubmit} id="form">
+        <br />
+        <FlightSearchDropdown
+          title="Origin"
+          cities={cities}
+          name="originLocationCode"
+          handleChange={handleChange}
+        />
+        <DatePicker
+          title="Departure Date"
+          name="departureDate"
+          handleChange={handleChange}
+        />
+        <FlightSearchDropdown
+          title="Destination"
+          cities={cities}
+          name="destinationLocationCode"
+          handleChange={handleChange}
+        />
+        <DatePicker
+          title="Return Date"
+          name="returnDate"
+          handleChange={handleChange}
+        />
+        <Input title="Adults:" name="adults" handleChange={handleChange} />
+        <SearchButton />
+      </form>
+    </>
   );
 }
 

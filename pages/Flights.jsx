@@ -8,7 +8,7 @@ export default function FlightList({
 }) {
   return (
     <div>
-      <h1>Flights</h1>
+      <h2 id="flight-title">Flights</h2>
       <FlightItem
         formData={formData}
         flightData={flightData}
