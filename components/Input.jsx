@@ -1,6 +1,6 @@
 export default function Input({ title, name, handleChange }) {
   return (
-    <>
+    <div>
       <h1>{title}</h1>
       <input
         type="number"
@@ -10,6 +10,6 @@ export default function Input({ title, name, handleChange }) {
         min="1"
         max="6"
       />
-    </>
+    </div>
   );
 }
