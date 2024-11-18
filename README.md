@@ -27,6 +27,7 @@ This React application allows users to find flights to selected locations based 
 
 ### Unsolved Problems
 
+- The deployed web application does not fully work due to the BEARER token. It expires every 30 minutes, so the network requests fail unless the repo is cloned and supplied with the BEARER token.
 - Upcoming change would be to display a My Trips page of the selected flights that the user chooses.
 
 ### Technologies Used

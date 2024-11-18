@@ -21,12 +21,10 @@ function Form({ cities, formData, setFormData, setFlightData }) {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log(formData);
       const res = await axios.get(
         `https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=${formData.originLocationCode}&destinationLocationCode=${formData.destinationLocationCode}&departureDate=${formData.departureDate}&returnDate=${formData.returnDate}&adults=${formData.adults}&max=30`,
         config
       );
-      console.log(res.data);
       setFlightData(res.data);
       navigate("/flights");
     } catch (err) {
